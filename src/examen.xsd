@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name = "bib">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name = "libro"  maxOccurs="unbounded" minOccurs="0" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type = "xs:string" name = "titulo"/>
+              <xs:element name = "autor"  maxOccurs="unbounded" minOccurs="0" >
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="apellido" maxOccurs="unbounded" type="xs:string">
+                      <xs:simpleType >
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="([a-z])+"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element type = "xs:string" name = "nombre"/>
+                    <xs:element type = "xs:int" name = "cedula"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="ciudad" />
+                  <xs:attribute type="xs:string" name="pais" />
+                  <xs:attribute type="xs:string" name="residencia"/>
+                  <xs:attribute type="xs:string" name="telefono" />
+                  <xs:attribute type="xs:string" name="correo" />
+                  <xs:attribute type="xs:string" name="foto" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element type = "xs:string" name = "editorial"/>
+              <xs:element type = "xs:float" name = "precio"/>
+              <xs:element type = "xs:string" name = "codigo"/>
+            </xs:sequence>
+            <xs:attribute name="anyo" type="xs:unsignedInt" use="required" >
+              <xs:simpleType >
+                <xs:restriction base="xs:positiveInteger">
+                  <xs:minInclusive value="1990"/>
+                  <xs:maxInclusive value="2020"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

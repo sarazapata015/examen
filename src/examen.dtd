@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bib SYSTEM "examen.xml">
+        <!DOCTYPE bib [
+        <!ELEMENT bib (libro)*>
+        <!ELEMENT libro (titulo|autor|editorial|precio|codigo)*>
+        <!ATTLIST libro
+                anyo CDATA #REQUIRED>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT autor (apellido,nombre,cedula)*>
+        <!ATTLIST autor
+                ciudad CDATA #IMPLIED
+                pais CDATA #IMPLIED
+                residencia CDATA #IMPLIED
+                telefono CDATA #IMPLIED
+                correo CDATA #IMPLIED
+                foto CDATA #IMPLIED
+                >
+        <!ELEMENT apellido (#PCDATA)>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT editorial (#PCDATA)>
+        <!ELEMENT precio (#PCDATA)>
+        <!ELEMENT codigo (#PCDATA)>
+        <!ELEMENT cedula (#PCDATA)>
+        ]>
